@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Friend Finder - Survey</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+  <!-- Bootstrap JavaScript & jQuery -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4"><span class="fas fa-user-friends"></span> Friend Finder</h1>
+      <hr class="my-4">
+      <h2><span class="fas fa-poll-h"></span> Survey</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+
+        <div class="card">
+
+          <div class="card-header">
+            <b>About You</b>
+          </div>
+
+          <div class="card-body">
+            <form role="form">
+
+              <div class="form-group">
+                <label for="name">Name <i>(Required)</i></label>
+                <input type="text" class="form-control" id="name">
+              </div>
+
+              <div class="form-group">
+                <label for="image">Link to Photo Image <i>(Required)</i></label>
+                <input type="password" class="form-control" id="image">
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="card">
+          <div class="card-header">
+            <b>Survey Questions</b>
+          </div>
+
+          <div class="card-body">
+            <form role="form">
+
+              <div class="form-group">
+                <label for="questions">Question 1</label>
+                <select class="form-control col-md-4" id="question1">
+                  <option selected>Choose Best Answer</option>  
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  </select>
+              </div>
+
+
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <a href="/api/friends">API Friends List</a> |
+        <a href="/github">GitHub Repo</a>
+      </p>
+    </div>
+  </footer>
+  </div>
+
+</body>
+</html>
