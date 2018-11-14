@@ -6,43 +6,52 @@ module.exports = function (app) {
   })
 
   app.post('/api/friends', function (req, res) {
-    friendsData.push(req.body)
     res.send(true)
 
     console.log('\n==================================\n',
-                'New Friend',
+                'New Friend\n',
                 req.body.name + '\n',
                 req.body.photo + '\n',
                 req.body.scores + '\n',
                 '\n==================================')
 
-    console.log('\n==================================\n',
-                'Existing Friends',
-                friendsData[0].name + '\n',
-                friendsData[0].photo + '\n',
-                friendsData[0].scores + '\n',
-                '\n==================================')
+    console.log('Existing Friends')
 
-    var newFriendScore = req.body.scores,
-        existingFriendScore = friendsData[0].scores,
-        diffScore = []
+    for (let i = 0; i < friendsData.length; i++) {
+      console.log(
+      'Name: ' + friendsData[i].name,
+      '\nPhoto: ' + friendsData[i].photo,
+      '\nScores: ' + friendsData[i].scores,
+      '\n==================================')
 
-    // ** A forEach method to loop through the existing friends to get to their scores.    
-    friendsData.forEach(function (data) {
-      var eachFriendsScore = data.scores
-      console.log(eachFriendsScore)
-    });
+      var newFriendScore = req.body.scores,
+      diffScore = []
 
+      // ** A forEach method to loop through the existing friends to get to their scores.    
+      friendsData.forEach(function (data) {
+        var eachFriendsScore = data.scores
+        // console.log("***** " + eachFriendsScore + " *****")
 
-    // ** For loop to compare the newFriends Score to the Existing Friends Score.  
-    // !! HOW TO DO THIS WHEN THERE ARE MULTIPLE FRIENDS??????????
+        // ** For loop to compare the newFriends Score to the Existing Friends Score.  
+          for (let i = 0; i < eachFriendsScore.length; i++) {
+         
+            // **Function to sum the difference
+            function scoreTotal(total, num) {
+              return total + num
+            }
 
-    for (let i = 0; i < newFriendScore.length; i++) {
-      diffScore.push(Math.abs(newFriendScore[i] - existingFriendScore[i]))
-    };
+            console.log(scoreTotal(eachFriendsScore[i]))
+            // var absoluteScore = Math.abs(newFriendScore[i] - eachFriendsScore[i])
 
-    console.log(diffScore);
+            // diffScore = absoluteScore.reduce(scoreTotal)
 
+            // console.log(scoreTotal)
+          };          
+      }) 
+      // console.log(diffScore);
+    }    
+
+    friendsData.push(req.body)
 
   })
 }
