@@ -6,50 +6,49 @@ module.exports = function (app) {
   })
 
   app.post('/api/friends', function (req, res) {
-    res.send(true)
+    
+    // console.log(
+    //   '\nNew Friend',
+    //   '\n==================================\n',
+    //   'Name: ' + req.body.name + '\n',
+    //   'Photo: ' + req.body.photo + '\n',
+    //   'Scores: ' + req.body.scores,
+    //   '\n==================================\n')
 
-    console.log('\n==================================\n',
-                'New Friend\n',
-                req.body.name + '\n',
-                req.body.photo + '\n',
-                req.body.scores + '\n',
-                '\n==================================')
-
-    console.log('Existing Friends')
+    // console.log(
+    //   '\nExisting Friends',
+    //   '\n==================================\n')
 
     for (let i = 0; i < friendsData.length; i++) {
-      console.log(
-      'Name: ' + friendsData[i].name,
-      '\nPhoto: ' + friendsData[i].photo,
-      '\nScores: ' + friendsData[i].scores,
-      '\n==================================')
+      // console.log(
+      //   'Name: ' + friendsData[i].name,
+      //   '\nPhoto: ' + friendsData[i].photo,
+      //   '\nScores: ' + friendsData[i].scores,
+      //   '\n==================================\n')
 
-      var newFriendScore = req.body.scores,
-      diffScore = []
+      var currentFriend = friendsData[i],
+          newFriendScore = req.body.scores,
+          score = 0,
+          bestScore = 99,
+          bestMatch
 
-      // ** A forEach method to loop through the existing friends to get to their scores.    
-      friendsData.forEach(function (data) {
-        var eachFriendsScore = data.scores
-        // console.log("***** " + eachFriendsScore + " *****")
+      for (let j = 0; j < currentFriend.scores.length; j++) {
+        var diffScore = Math.abs(parseInt(currentFriend.scores[j]) - parseInt(newFriendScore[j]))
+        score += diffScore  
+        // console.log(score)
+      }
+      if (score < bestScore) {
+        bestScore = score
+        bestMatch = currentFriend
+      }
+    }
 
-        // ** For loop to compare the newFriends Score to the Existing Friends Score.  
-          for (let i = 0; i < eachFriendsScore.length; i++) {
-         
-            // **Function to sum the difference
-            function scoreTotal(total, num) {
-              return total + num
-            }
+    // console.log(
+    //   '\nBest Match Name: ' + bestMatch.name,
+    //   '\nBest Match Photo: ' + bestMatch.photo,
+    //   '\nBest Match Score: ' + bestMatch.scores)
 
-            console.log(scoreTotal(eachFriendsScore[i]))
-            // var absoluteScore = Math.abs(newFriendScore[i] - eachFriendsScore[i])
-
-            // diffScore = absoluteScore.reduce(scoreTotal)
-
-            // console.log(scoreTotal)
-          };          
-      }) 
-      // console.log(diffScore);
-    }    
+    res.send(bestMatch)
 
     friendsData.push(req.body)
 

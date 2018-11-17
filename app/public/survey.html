@@ -47,7 +47,7 @@
               </div>
 
               <div class="form-group">
-                <label for="image">Link to Photo Image <i>(Required)</i></label>
+                <label for="image">Link to Photo <i>(Required)</i></label>
                 <input type="text" class="form-control" id="photo">
               </div>
 
@@ -69,7 +69,7 @@
                 <label for="questions"><b>Question 1</b></label>
                 <h6>Your mind is always buzzing with unexplored ideas and plans.</h6>
                 <select class="form-control col-md-4" id="question1">
-                  <option selected>Choose Best Answer</option>  
+                  <option disabled selected>Choose Best Answer</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -80,7 +80,7 @@
                 <label for="questions">Question 2</label>
                 <h6>Generally speaking, you rely more on your experience than your imagination.</h6>
                 <select class="form-control col-md-4" id="question2">
-                  <option selected>Choose Best Answer</option>  
+                  <option disabled selected>Choose Best Answer</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -91,7 +91,7 @@
                 <label for="questions">Question 3</label>
                 <h6>You find it easy to stay relazed and focused even when there is some pressure.</h6>
                 <select class="form-control col-md-4" id="question3">
-                  <option selected>Choose Best Answer</option>  
+                  <option disabled selected>Choose Best Answer</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -102,7 +102,7 @@
                 <label for="questions">Question 4</label>
                 <h6>You rarely do something just out of sheer curiosity.</h6>
                 <select class="form-control col-md-4" id="question4">
-                  <option selected>Choose Best Answer</option>  
+                  <option disabled selected>Choose Best Answer</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -113,7 +113,7 @@
                 <label for="questions">Question 5</label>
                 <h6>People can rarely upset you.</h6>
                 <select class="form-control col-md-4" id="question5">
-                  <option selected>Choose Best Answer</option>  
+                  <option disabled selected>Choose Best Answer</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -124,7 +124,7 @@
                 <label for="questions">Question 6</label>
                 <h6>It is often difficult for you to relate toother people's feelings.</h6>
                 <select class="form-control col-md-4" id="question6">
-                  <option selected>Choose Best Answer</option>  
+                  <option disabled selected>Choose Best Answer</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -135,7 +135,7 @@
                 <label for="questions">Question 7</label>
                 <h6>In a discussion, truth should be more important than people's sensitivites.</h6>
                 <select class="form-control col-md-4" id="question7">
-                  <option selected>Choose Best Answer</option>  
+                  <option disabled selected>Choose Best Answer</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -146,7 +146,7 @@
                 <label for="questions">Question 8</label>
                 <h6>You rarely get carried away by fantasies and ideas.</h6>
                 <select class="form-control col-md-4" id="question8">
-                  <option selected>Choose Best Answer</option>  
+                  <option disabled selected>Choose Best Answer</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -157,7 +157,7 @@
                 <label for="questions">Question 9</label>
                 <h6>You think that everyone's views should be respected regardless of whether they are supported by facts or not.</h6>
                 <select class="form-control col-md-4" id="question9">
-                  <option selected>Choose Best Answer</option>  
+                  <option disabled selected>Choose Best Answer</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -168,7 +168,7 @@
                 <label for="questions">Question 10</label>
                 <h6>You feel more energetic after spending time with a group of people.</h6>
                 <select class="form-control col-md-4" id="question10">
-                  <option selected>Choose Best Answer</option>  
+                  <option disabled selected>Choose Best Answer</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -200,7 +200,7 @@
               <!-- Modal Body/Best Match Display -->
               <div class="modal-body">
                 <h2 id="bestMatch-name"></h2>
-                <img id="bestMatch-photo">
+                <img id="bestMatch-photo" src="">
               </div>
 
               <!-- Modal Footer -->
@@ -262,7 +262,9 @@
 
     $.post('/api/friends', newFriend, function (data) {
       if (data) {
-        console.log("New Friend Added")
+        console.log("New Friend Added",
+                '#########  DATA INFO:  #########\n',
+                data)
 
         $('#bestMatch-name').text(data.name)
         $('#bestMatch-photo').attr('src', data.photo)

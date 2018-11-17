@@ -1,36 +1,68 @@
 var friendsArray = [
   {
     name: 'Kevin Costner',
-    photo: 'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiHk_Pczs_eAhUrja0KHat8BYQQjRx6BAgBEAU&url=https%3A%2F%2Fwww.biography.com%2Fpeople%2Fkevin-costner-9258776&psig=AOvVaw2JZROV1jpXan9C14MJiLtz&ust=1542138225832638',
+    photo: 'https://dtvimages.hs.llnwd.net/e1//photos/celebs/v3/NowShowing/36838/36838_v3_ba.jpg',
     scores: [
-      1,
-      2,
-      3,
-      4,
-      5,
-      1,
-      2,
-      3,
-      4,
-      5
+      '2',
+      '2',
+      '3',
+      '2',
+      '5',
+      '1',
+      '4',
+      '5',
+      '4',
+      '5'
     ]
   },
   {
     name: 'Julia Roberts',
-    photo: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fakns-images.eonline.com%2Feol_images%2FEntire_Site%2F2017319%2Frs_634x1024-170419104439-634.cannes-julia-roberts.cm.41817.jpg%3Ffit%3Daround%7C300%3A485%26crop%3D300%3A485%3Bcenter%2Ctop%26output-quality%3D90&imgrefurl=https%3A%2F%2Fwww.eonline.com%2Fnews%2Fjulia_roberts&docid=mh11Nj8rP0nuSM&tbnid=zQ_txTIJZO93LM%3A&vet=10ahUKEwiwxp_Vv9DeAhUBGKwKHbowAGEQMwhZKAIwAg..i&w=300&h=485&bih=767&biw=1440&q=Julia%20roberts%20%2B%20image&ved=0ahUKEwiwxp_Vv9DeAhUBGKwKHbowAGEQMwhZKAIwAg&iact=mrc&uact=8',
+    photo: 'https://m.media-amazon.com/images/M/MV5BMTQzNjU3MDczN15BMl5BanBnXkFtZTYwNzY2Njc4._V1_UX214_CR0,0,214,317_AL_.jpg',
     scores: [
-      3,
-      4,
-      2,
-      5,
-      1,
-      3,
-      4,
-      2,
-      5,
-      1,
+      '3',
+      '4',
+      '2',
+      '5',
+      '2',
+      '3',
+      '4',
+      '3',
+      '1',
+      '1',
     ]
-  }
+  },
+  {
+    "name": "Chris Hemsworth",
+    "photo": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0ODUwMjQ0NjIwNzI0MDAx/chris-hemsworth-poses-during-a-photo-call-for-thor-ragnarok-on-october-15-2017-in-sydney-australia-photo-by-mark-metcalfe_getty-images-for-disney-square.jpg",
+    "scores": [
+    "3",
+    "4",
+    "2",
+    "1",
+    "5",
+    "2",
+    "1",
+    "4",
+    "2",
+    "1"
+    ]
+    },
+    {
+    "name": "Charlize Theron",
+    "photo": "https://m.media-amazon.com/images/M/MV5BMTk5Mzc4ODU0Ml5BMl5BanBnXkFtZTcwNjU1NTI0Mw@@._V1_UY317_CR12,0,214,317_AL_.jpg",
+    "scores": [
+    "4",
+    "3",
+    "4",
+    "5",
+    "3",
+    "4",
+    "3",
+    "4",
+    "5",
+    "5"
+    ]
+    }
 ]
 
 module.exports = friendsArray
